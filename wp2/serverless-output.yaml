@@ -8,7 +8,7 @@ Resources:
       FunctionName:
         Fn::Sub: ${AWS::StackName}-phpserver
       Description: PHP Webserver
-      CodeUri: s3://techco-wp6/609ea088c76c7eb4ec7492d8f6e12ae2
+      CodeUri: s3://techco-lambda-wp/c2f90e25de18d49f9237819d00c566cd
       Runtime: provided
       Handler: router.php
       MemorySize: 3008
@@ -16,6 +16,11 @@ Resources:
       Tracing: Active
       Layers:
       - Fn::Sub: arn:aws:lambda:${AWS::Region}:887080169480:layer:php71:4
+      VpcConfig:
+        SecurityGroupIds:
+        - sg-d0a5c3a8
+        SubnetIds:
+        - subnet-c42f2e8d
       Events:
         api:
           Type: Api

@@ -15,6 +15,11 @@ Resources:
       Tracing: Active
       Layers:
         - !Sub arn:aws:lambda:${AWS::Region}:887080169480:layer:php71:4
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-d0a5c3a8
+        SubnetIds:
+          - subnet-c42f2e8d
       Events:
         api:
           Type: Api
