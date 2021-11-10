@@ -5,16 +5,17 @@ Resources:
   phpserver:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub ${AWS::StackName}-phpserver
+      FunctionName:
+        Fn::Sub: ${AWS::StackName}-phpserver
       Description: PHP Webserver
-      CodeUri: src/server
+      CodeUri: s3://techco-wp6/609ea088c76c7eb4ec7492d8f6e12ae2
       Runtime: provided
       Handler: router.php
       MemorySize: 3008
       Timeout: 30
       Tracing: Active
       Layers:
-        - !Sub arn:aws:lambda:${AWS::Region}:887080169480:layer:php71:4
+      - Fn::Sub: arn:aws:lambda:${AWS::Region}:887080169480:layer:php71:4
       Events:
         api:
           Type: Api
