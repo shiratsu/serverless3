@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: techco-wp
+Description: techco-serverless
 Transform: AWS::Serverless-2016-10-31
 Resources:
   phpserver:
@@ -8,7 +8,7 @@ Resources:
       FunctionName:
         Fn::Sub: ${AWS::StackName}-phpserver
       Description: PHP Webserver
-      CodeUri: s3://techco-lambda-wp/c2f90e25de18d49f9237819d00c566cd
+      CodeUri: s3://techco-serverless/b5ec93fa9b8ae974557cbf0666135af2
       Runtime: provided
       Handler: router.php
       MemorySize: 3008
@@ -18,9 +18,9 @@ Resources:
       - Fn::Sub: arn:aws:lambda:${AWS::Region}:887080169480:layer:php71:4
       VpcConfig:
         SecurityGroupIds:
-        - sg-d0a5c3a8
+        - sg-08a525c9a44cb7c09
         SubnetIds:
-        - subnet-c42f2e8d
+        - subnet-06a6f9e1c5384cf64
       Events:
         api:
           Type: Api

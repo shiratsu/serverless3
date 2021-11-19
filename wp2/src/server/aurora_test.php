@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-$dns = 'mysql:host=aurora-serverless.cluster-cjz1okxlbysw.ap-northeast-1.rds.amazonaws.com;dbname=aurora_test';
+$dns = 'mysql:host=wp-seerverless.cluster-cdpgugtn4mfy.ap-northeast-1.rds.amazonaws.com;dbname=aurora_test';
 $username = 'admin';
 $password = 'shun0509shun0509';
 $driver_options = [
@@ -15,9 +15,15 @@ $stmt = $pdo->query("SELECT * FROM test");
 ?>
 
 <html>
-    <ul>
-    <?php while($row = $stmt->fetch()): ?>
-        <li><?php echo 'id:' . $row['id'] . ', name: ' . $row['name'] ?></li>
-    <?php endwhile; ?>
-    </ul>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+</script>
+</head>
+<a href="regist.php">登録画面</a>
+<ul>
+<?php while($row = $stmt->fetch()): ?>
+    <li><?php echo 'id:' . $row['id'] . ', name: ' . $row['name'] ?></li><>
+<?php endwhile; ?>
+</ul>
 </html>

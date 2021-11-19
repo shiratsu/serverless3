@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: techco-wp
+Description: techco-serverless
 Transform: AWS::Serverless-2016-10-31
 Resources:
   phpserver:
@@ -17,9 +17,9 @@ Resources:
         - !Sub arn:aws:lambda:${AWS::Region}:887080169480:layer:php71:4
       VpcConfig:
         SecurityGroupIds:
-          - sg-d0a5c3a8
+          - sg-08a525c9a44cb7c09
         SubnetIds:
-          - subnet-c42f2e8d
+          - subnet-06a6f9e1c5384cf64
       Events:
         api:
           Type: Api
