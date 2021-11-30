@@ -8,7 +8,7 @@ Resources:
       FunctionName:
         Fn::Sub: ${AWS::StackName}-phpserver
       Description: PHP Webserver
-      CodeUri: s3://techco-serverless/b5ec93fa9b8ae974557cbf0666135af2
+      CodeUri: s3://techco-serverless/18bec2fc0b7aae175509a399b402335e
       Runtime: provided
       Handler: router.php
       MemorySize: 3008
